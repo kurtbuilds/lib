@@ -35,7 +35,8 @@ publish:
     git diff-index --exit-code HEAD > /dev/null || ! echo $(dye -r ERROR) You have untracked changes. Commit your changes before bumping the version
     git checkout next
     just build
-    git commit -am "Commit build"
+    git add .
+    git commit -m "Commit build"
     git push
     git checkout master
 
